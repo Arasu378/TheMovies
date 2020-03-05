@@ -1,0 +1,52 @@
+<div>
+    <div fxLayout="row" fxLayoutAlign=" left center">
+        <h3 style="cursor: pointer; margin-left: 20px;" (click)="goBack()">  <mat-icon style="margin-top: 5px;">arrow_back</mat-icon> Back</h3>
+    </div>    
+
+
+    <div fxLayout="row" style="margin: 40px;">
+        <img [src]="cast.profile_path | images" height="500px" width="350px" style="cursor: pointer;"/>
+        <div fxLayout="column" style="margin-left: 20px;">
+            <h1> {{ cast.name }} </h1>
+            <h3> Biography </h3>
+            <p> {{ cast.biography }} </p>
+            <mat-divider ></mat-divider>
+            <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-around center"> 
+            <h4>Discussions</h4>
+            <h4>Images</h4>
+            <h4>Changes</h4>
+            <h4>Report</h4>
+            <h4>Share </h4>
+            </div>
+            <mat-divider ></mat-divider>
+            <div fxLayoutAlign="left" style="margin-left: 60px;">
+                <h4> Known For</h4>
+            </div>
+            
+
+        </div>
+    </div>
+    <div fxLayout="column" style="margin-left: 40px; margin-top: 30px;">
+        <h4>Personal Info</h4>
+        <p style="font-weight: bold;">Known For</p>
+        <p> {{ cast.known_for_department }} </p>
+        <p style="font-weight: bold;">Gender</p>
+        <p> {{ cast.gender | gender }} </p>
+        <p style="font-weight: bold;">Birthday</p>
+        <p> {{ cast.birthday }} </p>
+        <p style="font-weight: bold;">Place Of Birth</p>
+        <p> {{ cast.place_of_birth }} </p>
+        <p style="font-weight: bold;">Official Site</p>
+        <p> {{ site }} </p>
+        <p style="font-weight: bold;" >Also Known As</p>
+        <div *ngFor="let name of cast.also_known_as">
+            <p> {{ name }} </p>
+        </div>
+      
+       
+
+    </div>
+   
+
+</div>
+

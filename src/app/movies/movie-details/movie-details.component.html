@@ -1,0 +1,42 @@
+<div>
+    <div fxLayout="row" fxLayoutAlign=" left center">
+        <h3 style="cursor: pointer; margin-left: 20px;" (click)="goBack()">  <mat-icon style="margin-top: 5px;">arrow_back</mat-icon> Back</h3>
+    </div>
+<div fxLayout="row" style="margin: 20px; height: 400px;" >
+    <img [src]="result.poster_path | images" height="250px" width="200px" style="cursor: pointer; margin-right: 20px;"/>
+    <div fxLayout="column">
+        <h2> {{ result.title }} </h2>
+        <p> {{ result.release_date | date: medium }} </p>
+        <h3>Overview</h3>
+        <p> {{ result.overview }} </p>
+    </div>
+</div>    
+<div fxLayout="column" style="margin: 20px;">
+            <h3 style="margin-bottom: 120px;"> Top Billed Cast</h3>
+            <div fxLayout="row" >
+                <mat-list *ngFor="let cast of casts; let i = index" >
+                    <div *ngIf="i < 5" fxLayoutAlign="left center">
+                        <mat-list-item>
+                            <mat-card style="margin-left: 5px; margin-right: 5px;">
+                                <div fxLayout="column">
+                                    <img [src]="cast.profile_path | images" height="150px" width="100px;" style="cursor: pointer;" (click)="biography(cast)"/>
+                                    <p style="font-size: 15px; font-weight: bold;"> {{ cast.name }} </p>
+                                    <p style="font-size: 12px;"> {{ cast.character }} </p>
+
+                                </div>
+                          </mat-card>  
+                        </mat-list-item>
+                
+                    </div>
+                   
+                   </mat-list>
+
+            </div>
+            <h3 style="cursor: pointer; margin-top: 120px;" fxLayoutAlign="left center" (click)="castAndCrew()"> Full Cast & Crew</h3>
+
+    </div>
+
+
+
+</div>
+

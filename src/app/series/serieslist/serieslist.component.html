@@ -1,0 +1,38 @@
+<div fxFlex="100">
+  <mat-drawer-container>
+    <mat-drawer mode="side" opened>
+        <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+            Movies
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list *ngFor="let data of navListData">
+                <mat-list-item class="nav_bar"> {{ data }} </mat-list-item>
+                <mat-divider></mat-divider>
+              </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+            TV Series
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list *ngFor="let data of navListSeriesData">
+                <mat-list-item class="nav_bar"> {{ data }} </mat-list-item>
+                <mat-divider></mat-divider>
+              </mat-list>
+            </mat-expansion-panel>
+</mat-accordion>
+       
+    </mat-drawer>
+    <mat-drawer-content>
+      <div fxLayout="row" fxLayoutAlign=" left center">
+        <h3 style="cursor: pointer; margin-left: 20px;" (click)="goBack()">  <mat-icon style="margin-top: 5px;">arrow_back</mat-icon> Back</h3>
+    </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

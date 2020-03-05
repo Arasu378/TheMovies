@@ -1,0 +1,41 @@
+<div>
+    <div fxLayout="row" fxLayoutAlign=" left center">
+        <h3 style="cursor: pointer; margin-left: 20px;" (click)="goBack()">  <mat-icon style="margin-top: 5px;">arrow_back</mat-icon> Back</h3>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center" style="margin-left: 50px; margin-right: 50px;" >
+        <div fxalayout="column" fxFlex="50">
+            <h4> Cast {{ castCount }}</h4>
+            <div *ngFor="let cast of casts">
+                <div style="margin-top: 30px;"> 
+                   
+                        <div fxLayout="row">
+                            <img [src]="cast.profile_path | images" height="100px" width="80px" style="cursor: pointer;" (click)="biography(cast)"/>
+                            <div fxLayout="column" style="margin-left: 10px;">
+                                <p> {{ cast.name}} </p>
+                                <p> {{ cast.character}} </p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+        </div>
+        <div fxalayout="column" fxFlex="50" style="margin-left: 10px;">
+            <h4> Crew {{ crewCount }}</h4>
+            <div *ngFor="let crew of crews">
+                <div style="margin-top: 30px;"> 
+                   
+                        <div fxLayout="row">
+                            <img [src]="crew.profile_path | images" height="100px" width="80px" style="cursor: pointer;"/>
+                            <div fxLayout="column" style="margin-left: 10px;">
+                                <p> {{ crew.name}} </p>
+                                <p> {{ crew.job}} </p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>
