@@ -14,7 +14,6 @@ export class ApiService {
 
   public get(path: string, options?): Observable<any> {
     this.logger.log(`${environment.URL}${path}`);
-    return this.httpClient.
-    (`${environment.URL}${path}`, options);
+    return this.httpClient.get(`${environment.URL}${path}`, options);
   }
 }
